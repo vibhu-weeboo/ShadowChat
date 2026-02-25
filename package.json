@@ -1,0 +1,44 @@
+{
+  "name": "shadowchat",
+  "version": "1.0.0",
+  "description": "A decentralized, real-time chat application with end-to-end encryption, AI-powered moderation, and glassmorphism UI",
+  "main": "server/src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && node --watch src/index.js",
+    "build": "concurrently \"npm run build:client\" \"npm run build:server\"",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "start": "node server/dist/index.js",
+    "test": "concurrently \"npm run test:client\" \"npm run test:server\"",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "lint": "eslint . --ext .js,.jsx",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "chat",
+    "encryption",
+    "e2e",
+    "real-time",
+    "websocket",
+    "ai",
+    "moderation",
+    "decentralized"
+  ],
+  "author": "vibhu-weeboo",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
